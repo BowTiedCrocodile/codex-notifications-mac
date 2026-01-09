@@ -337,7 +337,7 @@
 				DEVELOPMENT_TEAM = "";
 				DEFINES_MODULE = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_HARDENED_RUNTIME = NO;
 				INFOPLIST_FILE = CodexNotifier/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
