@@ -1,12 +1,12 @@
 import Foundation
 
-struct NotificationPayload: Decodable {
-    let type: String?
-    let lastAssistantMessage: String?
-    let inputMessages: [String]?
-    let threadId: String?
+public struct NotificationPayload: Decodable {
+    public let type: String?
+    public let lastAssistantMessage: String?
+    public let inputMessages: [String]?
+    public let threadId: String?
 
-    var title: String {
+    public var title: String {
         let message = lastAssistantMessage?.trimmingCharacters(in: .whitespacesAndNewlines)
         if let message, !message.isEmpty {
             return "Codex: \(message)"
@@ -14,7 +14,7 @@ struct NotificationPayload: Decodable {
         return "Codex: Turn Complete!"
     }
 
-    var message: String {
+    public var message: String {
         inputMessages?.joined(separator: " ") ?? ""
     }
 
@@ -25,7 +25,7 @@ struct NotificationPayload: Decodable {
         case threadId = "thread-id"
     }
 
-    static func decode(from jsonString: String) -> NotificationPayload? {
+    public static func decode(from jsonString: String) -> NotificationPayload? {
         guard let data = jsonString.data(using: .utf8) else { return nil }
         return try? JSONDecoder().decode(NotificationPayload.self, from: data)
     }

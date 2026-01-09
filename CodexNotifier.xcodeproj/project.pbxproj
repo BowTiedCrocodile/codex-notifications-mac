@@ -11,7 +11,50 @@
 		9A1D4E3A2C8B4D7A9C1E0F17 /* NotificationPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1D4E3A2C8B4D7A9C1E0F07 /* NotificationPayload.swift */; };
 		9A1D4E3A2C8B4D7A9C1E0F18 /* Notifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1D4E3A2C8B4D7A9C1E0F08 /* Notifier.swift */; };
 		9A1D4E3A2C8B4D7A9C1E0F19 /* FileWatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1D4E3A2C8B4D7A9C1E0F09 /* FileWatcher.swift */; };
+		9A1D4E3A2C8B4D7A9C1E0F24 /* NotificationPayloadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1D4E3A2C8B4D7A9C1E0F21 /* NotificationPayloadTests.swift */; };
+		9A1D4E3A2C8B4D7A9C1E0F25 /* NotifierTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1D4E3A2C8B4D7A9C1E0F22 /* NotifierTests.swift */; };
+		9A1D4E3A2C8B4D7A9C1E0F3C /* CodexNotifierCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A1D4E3A2C8B4D7A9C1E0F31 /* CodexNotifierCore.framework */; };
+		9A1D4E3A2C8B4D7A9C1E0F3D /* CodexNotifierCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A1D4E3A2C8B4D7A9C1E0F31 /* CodexNotifierCore.framework */; };
+		9A1D4E3A2C8B4D7A9C1E0F3E /* CodexNotifierCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9A1D4E3A2C8B4D7A9C1E0F31 /* CodexNotifierCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+	9A1D4E3A2C8B4D7A9C1E0F2E /* PBXContainerItemProxy */ = {
+		isa = PBXContainerItemProxy;
+		containerPortal = 9A1D4E3A2C8B4D7A9C1E0F00 /* Project object */;
+		proxyType = 1;
+		remoteGlobalIDString = 9A1D4E3A2C8B4D7A9C1E0F01;
+		remoteInfo = CodexNotifier;
+	};
+	9A1D4E3A2C8B4D7A9C1E0F42 /* PBXContainerItemProxy */ = {
+		isa = PBXContainerItemProxy;
+		containerPortal = 9A1D4E3A2C8B4D7A9C1E0F00 /* Project object */;
+		proxyType = 1;
+		remoteGlobalIDString = 9A1D4E3A2C8B4D7A9C1E0F32;
+		remoteInfo = CodexNotifierCore;
+	};
+	9A1D4E3A2C8B4D7A9C1E0F43 /* PBXContainerItemProxy */ = {
+		isa = PBXContainerItemProxy;
+		containerPortal = 9A1D4E3A2C8B4D7A9C1E0F00 /* Project object */;
+		proxyType = 1;
+		remoteGlobalIDString = 9A1D4E3A2C8B4D7A9C1E0F32;
+		remoteInfo = CodexNotifierCore;
+	};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		9A1D4E3A2C8B4D7A9C1E0F40 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				9A1D4E3A2C8B4D7A9C1E0F3E /* CodexNotifierCore.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		9A1D4E3A2C8B4D7A9C1E0F05 /* CodexNotifierApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodexNotifierApp.swift; sourceTree = "<group>"; };
@@ -21,10 +64,30 @@
 		9A1D4E3A2C8B4D7A9C1E0F09 /* FileWatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileWatcher.swift; sourceTree = "<group>"; };
 		9A1D4E3A2C8B4D7A9C1E0F0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9A1D4E3A2C8B4D7A9C1E0F0B /* CodexNotifier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; path = CodexNotifier.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A1D4E3A2C8B4D7A9C1E0F21 /* NotificationPayloadTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationPayloadTests.swift; sourceTree = "<group>"; };
+		9A1D4E3A2C8B4D7A9C1E0F22 /* NotifierTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifierTests.swift; sourceTree = "<group>"; };
+		9A1D4E3A2C8B4D7A9C1E0F23 /* CodexNotifierTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = CodexNotifierTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A1D4E3A2C8B4D7A9C1E0F31 /* CodexNotifierCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CodexNotifierCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		9A1D4E3A2C8B4D7A9C1E0F0D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A1D4E3A2C8B4D7A9C1E0F3C /* CodexNotifierCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9A1D4E3A2C8B4D7A9C1E0F2B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A1D4E3A2C8B4D7A9C1E0F3D /* CodexNotifierCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9A1D4E3A2C8B4D7A9C1E0F37 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -38,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				9A1D4E3A2C8B4D7A9C1E0F04 /* CodexNotifier */,
+				9A1D4E3A2C8B4D7A9C1E0F20 /* CodexNotifierTests */,
 				9A1D4E3A2C8B4D7A9C1E0F03 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -46,6 +110,8 @@
 			isa = PBXGroup;
 			children = (
 				9A1D4E3A2C8B4D7A9C1E0F0B /* CodexNotifier.app */,
+				9A1D4E3A2C8B4D7A9C1E0F31 /* CodexNotifierCore.framework */,
+				9A1D4E3A2C8B4D7A9C1E0F23 /* CodexNotifierTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -63,6 +129,15 @@
 			path = CodexNotifier;
 			sourceTree = "<group>";
 		};
+		9A1D4E3A2C8B4D7A9C1E0F20 /* CodexNotifierTests */ = {
+			isa = PBXGroup;
+			children = (
+				9A1D4E3A2C8B4D7A9C1E0F21 /* NotificationPayloadTests.swift */,
+				9A1D4E3A2C8B4D7A9C1E0F22 /* NotifierTests.swift */,
+			);
+			path = CodexNotifierTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -73,15 +148,52 @@
 				9A1D4E3A2C8B4D7A9C1E0F0C /* Sources */,
 				9A1D4E3A2C8B4D7A9C1E0F0D /* Frameworks */,
 				9A1D4E3A2C8B4D7A9C1E0F0E /* Resources */,
+				9A1D4E3A2C8B4D7A9C1E0F40 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				9A1D4E3A2C8B4D7A9C1E0F3F /* PBXTargetDependency */,
 			);
 			name = CodexNotifier;
 			productName = CodexNotifier;
 			productReference = 9A1D4E3A2C8B4D7A9C1E0F0B /* CodexNotifier.app */;
 			productType = "com.apple.product-type.application";
+		};
+		9A1D4E3A2C8B4D7A9C1E0F32 /* CodexNotifierCore */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9A1D4E3A2C8B4D7A9C1E0F33 /* Build configuration list for PBXNativeTarget "CodexNotifierCore" */;
+			buildPhases = (
+				9A1D4E3A2C8B4D7A9C1E0F36 /* Sources */,
+				9A1D4E3A2C8B4D7A9C1E0F37 /* Frameworks */,
+				9A1D4E3A2C8B4D7A9C1E0F38 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CodexNotifierCore;
+			productName = CodexNotifierCore;
+			productReference = 9A1D4E3A2C8B4D7A9C1E0F31 /* CodexNotifierCore.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		9A1D4E3A2C8B4D7A9C1E0F26 /* CodexNotifierTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9A1D4E3A2C8B4D7A9C1E0F27 /* Build configuration list for PBXNativeTarget "CodexNotifierTests" */;
+			buildPhases = (
+				9A1D4E3A2C8B4D7A9C1E0F2A /* Sources */,
+				9A1D4E3A2C8B4D7A9C1E0F2B /* Frameworks */,
+				9A1D4E3A2C8B4D7A9C1E0F2C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9A1D4E3A2C8B4D7A9C1E0F41 /* PBXTargetDependency */,
+			);
+			name = CodexNotifierTests;
+			productName = CodexNotifierTests;
+			productReference = 9A1D4E3A2C8B4D7A9C1E0F23 /* CodexNotifierTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -107,12 +219,28 @@
 			projectRoot = "";
 			targets = (
 				9A1D4E3A2C8B4D7A9C1E0F01 /* CodexNotifier */,
+				9A1D4E3A2C8B4D7A9C1E0F32 /* CodexNotifierCore */,
+				9A1D4E3A2C8B4D7A9C1E0F26 /* CodexNotifierTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		9A1D4E3A2C8B4D7A9C1E0F0E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9A1D4E3A2C8B4D7A9C1E0F2C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9A1D4E3A2C8B4D7A9C1E0F38 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -128,6 +256,22 @@
 			files = (
 				9A1D4E3A2C8B4D7A9C1E0F15 /* CodexNotifierApp.swift in Sources */,
 				9A1D4E3A2C8B4D7A9C1E0F16 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9A1D4E3A2C8B4D7A9C1E0F2A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A1D4E3A2C8B4D7A9C1E0F24 /* NotificationPayloadTests.swift in Sources */,
+				9A1D4E3A2C8B4D7A9C1E0F25 /* NotifierTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9A1D4E3A2C8B4D7A9C1E0F36 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 				9A1D4E3A2C8B4D7A9C1E0F17 /* NotificationPayload.swift in Sources */,
 				9A1D4E3A2C8B4D7A9C1E0F18 /* Notifier.swift in Sources */,
 				9A1D4E3A2C8B4D7A9C1E0F19 /* FileWatcher.swift in Sources */,
@@ -135,6 +279,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9A1D4E3A2C8B4D7A9C1E0F2D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9A1D4E3A2C8B4D7A9C1E0F01 /* CodexNotifier */;
+			targetProxy = 9A1D4E3A2C8B4D7A9C1E0F2E /* PBXContainerItemProxy */;
+		};
+		9A1D4E3A2C8B4D7A9C1E0F3F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9A1D4E3A2C8B4D7A9C1E0F32 /* CodexNotifierCore */;
+			targetProxy = 9A1D4E3A2C8B4D7A9C1E0F42 /* PBXContainerItemProxy */;
+		};
+		9A1D4E3A2C8B4D7A9C1E0F41 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9A1D4E3A2C8B4D7A9C1E0F32 /* CodexNotifierCore */;
+			targetProxy = 9A1D4E3A2C8B4D7A9C1E0F43 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		9A1D4E3A2C8B4D7A9C1E0F0F /* Debug */ = {
@@ -173,6 +335,8 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
+				DEFINES_MODULE = YES;
+				ENABLE_TESTABILITY = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = CodexNotifier/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
@@ -190,6 +354,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
+				DEFINES_MODULE = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = CodexNotifier/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
@@ -197,6 +362,66 @@
 				MARKETING_VERSION = 0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.codex.notifications;
 				PRODUCT_NAME = CodexNotifier;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		9A1D4E3A2C8B4D7A9C1E0F34 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				DEFINES_MODULE = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.codex.notifications.core;
+				PRODUCT_NAME = CodexNotifierCore;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		9A1D4E3A2C8B4D7A9C1E0F35 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				DEFINES_MODULE = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.codex.notifications.core;
+				PRODUCT_NAME = CodexNotifierCore;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		9A1D4E3A2C8B4D7A9C1E0F28 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.codex.notifications.tests;
+				PRODUCT_NAME = CodexNotifierTests;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		9A1D4E3A2C8B4D7A9C1E0F29 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.codex.notifications.tests;
+				PRODUCT_NAME = CodexNotifierTests;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -218,6 +443,24 @@
 			buildConfigurations = (
 				9A1D4E3A2C8B4D7A9C1E0F11 /* Debug */,
 				9A1D4E3A2C8B4D7A9C1E0F12 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		9A1D4E3A2C8B4D7A9C1E0F33 /* Build configuration list for PBXNativeTarget "CodexNotifierCore" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9A1D4E3A2C8B4D7A9C1E0F34 /* Debug */,
+				9A1D4E3A2C8B4D7A9C1E0F35 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		9A1D4E3A2C8B4D7A9C1E0F27 /* Build configuration list for PBXNativeTarget "CodexNotifierTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9A1D4E3A2C8B4D7A9C1E0F28 /* Debug */,
+				9A1D4E3A2C8B4D7A9C1E0F29 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;

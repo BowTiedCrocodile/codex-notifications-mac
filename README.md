@@ -6,6 +6,14 @@ Native macOS menu bar app that plays a sound and flashes a status icon when Code
 
 Open `CodexNotifier.xcodeproj` in Xcode and build/run the `CodexNotifier` target. The app runs as a menu bar-only utility (no Dock icon).
 
+## Tests
+
+Run the unit tests with:
+
+```sh
+xcodebuild test -project CodexNotifier.xcodeproj -scheme CodexNotifierTests
+```
+
 ## Codex integration
 
 Codex can run a shell script when a turn completes. Point it at `scripts/codex-notify` and pass the payload JSON as the first argument.

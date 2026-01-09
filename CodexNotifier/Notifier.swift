@@ -1,6 +1,6 @@
 import Cocoa
 
-final class Notifier {
+public final class Notifier {
     private enum Keys {
         static let playSound = "playSound"
         static let flashIcon = "flashIcon"
@@ -10,9 +10,9 @@ final class Notifier {
     private let defaults = UserDefaults.standard
     private var resetWorkItem: DispatchWorkItem?
 
-    var iconHandler: ((Bool) -> Void)?
+    public var iconHandler: ((Bool) -> Void)?
 
-    init() {
+    public init() {
         defaults.register(defaults: [
             Keys.playSound: true,
             Keys.flashIcon: true,
@@ -20,27 +20,27 @@ final class Notifier {
         ])
     }
 
-    var playSoundEnabled: Bool {
+    public var playSoundEnabled: Bool {
         get { defaults.bool(forKey: Keys.playSound) }
         set { defaults.set(newValue, forKey: Keys.playSound) }
     }
 
-    var flashIconEnabled: Bool {
+    public var flashIconEnabled: Bool {
         get { defaults.bool(forKey: Keys.flashIcon) }
         set { defaults.set(newValue, forKey: Keys.flashIcon) }
     }
 
-    var soundName: String {
+    public var soundName: String {
         get { defaults.string(forKey: Keys.soundName) ?? Self.defaultSoundName() }
         set { defaults.set(newValue, forKey: Keys.soundName) }
     }
 
-    func handle(jsonString: String) {
+    public func handle(jsonString: String) {
         guard let payload = NotificationPayload.decode(from: jsonString) else { return }
         handle(payload: payload)
     }
 
-    func handle(payload: NotificationPayload) {
+    public func handle(payload: NotificationPayload) {
         guard payload.type == "agent-turn-complete" else { return }
 
         if flashIconEnabled {
@@ -52,7 +52,7 @@ final class Notifier {
         }
     }
 
-    func playTest() {
+    public func playTest() {
         flashIcon()
         playSound()
     }
@@ -73,7 +73,7 @@ final class Notifier {
         sound?.play()
     }
 
-    static func availableSounds() -> [String] {
+    public static func availableSounds() -> [String] {
         let candidates = [
             "Basso",
             "Blow",
@@ -97,14 +97,14 @@ final class Notifier {
         return available.isEmpty ? [defaultSoundName()] : available
     }
 
-    static func displayName(for soundName: String) -> String {
+    public static func displayName(for soundName: String) -> String {
         if let dotIndex = soundName.lastIndex(of: ".") {
             return String(soundName[..<dotIndex])
         }
         return soundName
     }
 
-    static func defaultSoundName() -> String {
+    public static func defaultSoundName() -> String {
         return "Glass"
     }
 }

@@ -1,17 +1,17 @@
 import Foundation
 
-final class FileWatcher {
+public final class FileWatcher {
     private let url: URL
     private let handler: () -> Void
     private var fileDescriptor: CInt = -1
     private var source: DispatchSourceFileSystemObject?
 
-    init(url: URL, handler: @escaping () -> Void) {
+    public init(url: URL, handler: @escaping () -> Void) {
         self.url = url
         self.handler = handler
     }
 
-    func start() {
+    public func start() {
         guard source == nil else { return }
         fileDescriptor = open(url.path, O_EVTONLY)
         guard fileDescriptor >= 0 else { return }

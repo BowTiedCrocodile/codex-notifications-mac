@@ -1,4 +1,5 @@
 import Cocoa
+import CodexNotifierCore
 
 final class AppDelegate: NSObject, NSApplicationDelegate {
     private let payloadFileName = "payload.json"
