@@ -7,12 +7,13 @@ public final class Notifier {
         static let soundName = "soundName"
     }
 
-    private let defaults = UserDefaults.standard
+    private let defaults: UserDefaults
     private var resetWorkItem: DispatchWorkItem?
 
     public var iconHandler: ((Bool) -> Void)?
 
-    public init() {
+    public init(defaults: UserDefaults = .standard) {
+        self.defaults = defaults
         defaults.register(defaults: [
             Keys.playSound: true,
             Keys.flashIcon: true,

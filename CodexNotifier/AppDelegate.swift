@@ -5,6 +5,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     private let payloadFileName = "payload.json"
     private let normalSymbolName = "sparkles"
     private let alertSymbolName = "bell.badge.fill"
+    private let maxPayloadBytes = 64 * 1024
 
     private var statusItem: NSStatusItem!
     private var notifier: Notifier!
@@ -110,13 +111,25 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         guard let payloadURL = payloadURL() else { return }
         FileManager.default.createFile(atPath: payloadURL.path, contents: nil)
 
-        fileWatcher = FileWatcher(url: payloadURL) { [weak self] in
+        fileWatcher = FileWatcher(url: payloadURL, handler: { [weak self] in
             self?.handlePayloadFile(at: payloadURL)
-        }
+        }, errorHandler: { message in
+            NSLog("%@", message)
+        })
         fileWatcher?.start()
     }
 
     private func handlePayloadFile(at url: URL) {
+        guard let attributes = try? FileManager.default.attributesOfItem(atPath: url.path),
+              let fileSize = attributes[.size] as? NSNumber
+        else {
+            NSLog("Unable to determine payload size; skipping read.")
+            return
+        }
+        guard fileSize.intValue <= maxPayloadBytes else {
+            NSLog("Payload exceeds %d bytes; skipping read.", maxPayloadBytes)
+            return
+        }
         guard let data = try? Data(contentsOf: url),
               let jsonString = String(data: data, encoding: .utf8),
               !jsonString.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
