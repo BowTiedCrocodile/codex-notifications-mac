@@ -1,0 +1,18 @@
+{
+  "images" : [
+    {
+      "filename" : "mac-codex-notifier-taskbar-icon-grayscale.jpeg",
+      "idiom" : "mac",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "mac-codex-notifier-taskbar-icon-grayscale@2x.jpeg",
+      "idiom" : "mac",
+      "scale" : "2x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

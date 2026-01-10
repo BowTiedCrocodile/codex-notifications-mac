@@ -1,16 +1,14 @@
 {
   "images" : [
     {
-      "idiom" : "universal",
+      "filename" : "mac-codex-notifier.png",
+      "idiom" : "mac",
       "scale" : "1x"
     },
     {
-      "idiom" : "universal",
+      "filename" : "mac-codex-notifier@2x.png",
+      "idiom" : "mac",
       "scale" : "2x"
-    },
-    {
-      "idiom" : "universal",
-      "scale" : "3x"
     }
   ],
   "info" : {
