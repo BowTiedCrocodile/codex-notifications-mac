@@ -3,8 +3,8 @@ import CodexNotifierCore
 
 final class AppDelegate: NSObject, NSApplicationDelegate {
     private let payloadFileName = "payload.json"
-    private let normalIconName = "TaskbarIcon"
-    private let alertIconName = "TaskbarIconAlert"
+    private let normalSymbolName = "sparkles"
+    private let alertSymbolName = "bell.badge.fill"
     private let maxPayloadBytes = 64 * 1024
 
     private var statusItem: NSStatusItem!
@@ -81,11 +81,9 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     private func updateStatusIcon(isAlert: Bool) {
-        let assetName = isAlert ? alertIconName : normalIconName
-        let image = NSImage(named: assetName)
-        image?.isTemplate = !isAlert
-        statusItem.button?.image = image
-        statusItem.button?.image?.accessibilityDescription = "Codex Notifier"
+        let symbolName = isAlert ? alertSymbolName : normalSymbolName
+        statusItem.button?.image = NSImage(systemSymbolName: symbolName, accessibilityDescription: "Codex Notifier")
+        statusItem.button?.image?.isTemplate = true
     }
 
     private func refreshMenuStates() {
