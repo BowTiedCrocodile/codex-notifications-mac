@@ -13,6 +13,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
 
     private var playSoundItem: NSMenuItem?
     private var flashIconItem: NSMenuItem?
+    private var showNotificationItem: NSMenuItem?
     private var soundMenu: NSMenu?
 
     func applicationDidFinishLaunching(_ notification: Notification) {
@@ -44,6 +45,11 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         flashIcon.target = self
         menu.addItem(flashIcon)
         flashIconItem = flashIcon
+
+        let showNotification = NSMenuItem(title: "Show Notification", action: #selector(toggleShowNotification), keyEquivalent: "")
+        showNotification.target = self
+        menu.addItem(showNotification)
+        showNotificationItem = showNotification
 
         menu.addItem(NSMenuItem.separator())
 
@@ -83,6 +89,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     private func refreshMenuStates() {
         playSoundItem?.state = notifier.playSoundEnabled ? .on : .off
         flashIconItem?.state = notifier.flashIconEnabled ? .on : .off
+        showNotificationItem?.state = notifier.showNotificationEnabled ? .on : .off
 
         if let soundMenu = soundMenu {
             for item in soundMenu.items {
@@ -156,6 +163,23 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     @objc private func toggleFlashIcon(_ sender: NSMenuItem) {
         notifier.flashIconEnabled.toggle()
         refreshMenuStates()
+    }
+
+    @objc private func toggleShowNotification(_ sender: NSMenuItem) {
+        if notifier.showNotificationEnabled {
+            notifier.showNotificationEnabled = false
+            refreshMenuStates()
+            return
+        }
+        notifier.requestNotificationAuthorization { [weak self] granted in
+            DispatchQueue.main.async {
+                self?.notifier.showNotificationEnabled = granted
+                if !granted {
+                    NSLog("Notification permission not granted.")
+                }
+                self?.refreshMenuStates()
+            }
+        }
     }
 
     @objc private func selectSound(_ sender: NSMenuItem) {

@@ -19,27 +19,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-	9A1D4E3A2C8B4D7A9C1E0F2E /* PBXContainerItemProxy */ = {
-		isa = PBXContainerItemProxy;
-		containerPortal = 9A1D4E3A2C8B4D7A9C1E0F00 /* Project object */;
-		proxyType = 1;
-		remoteGlobalIDString = 9A1D4E3A2C8B4D7A9C1E0F01;
-		remoteInfo = CodexNotifier;
-	};
-	9A1D4E3A2C8B4D7A9C1E0F42 /* PBXContainerItemProxy */ = {
-		isa = PBXContainerItemProxy;
-		containerPortal = 9A1D4E3A2C8B4D7A9C1E0F00 /* Project object */;
-		proxyType = 1;
-		remoteGlobalIDString = 9A1D4E3A2C8B4D7A9C1E0F32;
-		remoteInfo = CodexNotifierCore;
-	};
-	9A1D4E3A2C8B4D7A9C1E0F43 /* PBXContainerItemProxy */ = {
-		isa = PBXContainerItemProxy;
-		containerPortal = 9A1D4E3A2C8B4D7A9C1E0F00 /* Project object */;
-		proxyType = 1;
-		remoteGlobalIDString = 9A1D4E3A2C8B4D7A9C1E0F32;
-		remoteInfo = CodexNotifierCore;
-	};
+		9A1D4E3A2C8B4D7A9C1E0F42 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A1D4E3A2C8B4D7A9C1E0F00 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9A1D4E3A2C8B4D7A9C1E0F32;
+			remoteInfo = CodexNotifierCore;
+		};
+		9A1D4E3A2C8B4D7A9C1E0F43 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A1D4E3A2C8B4D7A9C1E0F00 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9A1D4E3A2C8B4D7A9C1E0F32;
+			remoteInfo = CodexNotifierCore;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -97,7 +90,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		9A1D4E3A2C8B4D7A9C1E0F02 /* Main */ = {
+		9A1D4E3A2C8B4D7A9C1E0F02 = {
 			isa = PBXGroup;
 			children = (
 				9A1D4E3A2C8B4D7A9C1E0F04 /* CodexNotifier */,
@@ -160,23 +153,6 @@
 			productReference = 9A1D4E3A2C8B4D7A9C1E0F0B /* CodexNotifier.app */;
 			productType = "com.apple.product-type.application";
 		};
-		9A1D4E3A2C8B4D7A9C1E0F32 /* CodexNotifierCore */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 9A1D4E3A2C8B4D7A9C1E0F33 /* Build configuration list for PBXNativeTarget "CodexNotifierCore" */;
-			buildPhases = (
-				9A1D4E3A2C8B4D7A9C1E0F36 /* Sources */,
-				9A1D4E3A2C8B4D7A9C1E0F37 /* Frameworks */,
-				9A1D4E3A2C8B4D7A9C1E0F38 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = CodexNotifierCore;
-			productName = CodexNotifierCore;
-			productReference = 9A1D4E3A2C8B4D7A9C1E0F31 /* CodexNotifierCore.framework */;
-			productType = "com.apple.product-type.framework";
-		};
 		9A1D4E3A2C8B4D7A9C1E0F26 /* CodexNotifierTests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9A1D4E3A2C8B4D7A9C1E0F27 /* Build configuration list for PBXNativeTarget "CodexNotifierTests" */;
@@ -194,6 +170,23 @@
 			productName = CodexNotifierTests;
 			productReference = 9A1D4E3A2C8B4D7A9C1E0F23 /* CodexNotifierTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		9A1D4E3A2C8B4D7A9C1E0F32 /* CodexNotifierCore */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9A1D4E3A2C8B4D7A9C1E0F33 /* Build configuration list for PBXNativeTarget "CodexNotifierCore" */;
+			buildPhases = (
+				9A1D4E3A2C8B4D7A9C1E0F36 /* Sources */,
+				9A1D4E3A2C8B4D7A9C1E0F37 /* Frameworks */,
+				9A1D4E3A2C8B4D7A9C1E0F38 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CodexNotifierCore;
+			productName = CodexNotifierCore;
+			productReference = 9A1D4E3A2C8B4D7A9C1E0F31 /* CodexNotifierCore.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
@@ -213,7 +206,7 @@
 				en,
 				Base,
 			);
-			mainGroup = 9A1D4E3A2C8B4D7A9C1E0F02 /* Main */;
+			mainGroup = 9A1D4E3A2C8B4D7A9C1E0F02;
 			productRefGroup = 9A1D4E3A2C8B4D7A9C1E0F03 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -281,11 +274,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		9A1D4E3A2C8B4D7A9C1E0F2D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 9A1D4E3A2C8B4D7A9C1E0F01 /* CodexNotifier */;
-			targetProxy = 9A1D4E3A2C8B4D7A9C1E0F2E /* PBXContainerItemProxy */;
-		};
 		9A1D4E3A2C8B4D7A9C1E0F3F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 9A1D4E3A2C8B4D7A9C1E0F32 /* CodexNotifierCore */;
@@ -332,17 +320,21 @@
 		9A1D4E3A2C8B4D7A9C1E0F11 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
 				DEFINES_MODULE = YES;
-				ENABLE_TESTABILITY = YES;
+				DEVELOPMENT_TEAM = F4VK638T8R;
 				ENABLE_HARDENED_RUNTIME = NO;
+				ENABLE_TESTABILITY = YES;
 				INFOPLIST_FILE = CodexNotifier/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 0.1;
-				PRODUCT_BUNDLE_IDENTIFIER = com.codex.notifications;
+				PRODUCT_BUNDLE_IDENTIFIER = com.maccodex.notifications;
 				PRODUCT_NAME = CodexNotifier;
 				SWIFT_VERSION = 5.0;
 			};
@@ -351,51 +343,21 @@
 		9A1D4E3A2C8B4D7A9C1E0F12 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = F4VK638T8R;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = CodexNotifier/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 0.1;
-				PRODUCT_BUNDLE_IDENTIFIER = com.codex.notifications;
+				PRODUCT_BUNDLE_IDENTIFIER = com.maccodex.notifications;
 				PRODUCT_NAME = CodexNotifier;
-				SWIFT_VERSION = 5.0;
-			};
-			name = Release;
-		};
-		9A1D4E3A2C8B4D7A9C1E0F34 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
-				DEFINES_MODULE = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 0.1;
-				PRODUCT_BUNDLE_IDENTIFIER = com.codex.notifications.core;
-				PRODUCT_NAME = CodexNotifierCore;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-			};
-			name = Debug;
-		};
-		9A1D4E3A2C8B4D7A9C1E0F35 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
-				DEFINES_MODULE = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 0.1;
-				PRODUCT_BUNDLE_IDENTIFIER = com.codex.notifications.core;
-				PRODUCT_NAME = CodexNotifierCore;
-				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -404,10 +366,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = F4VK638T8R;
 				GENERATE_INFOPLIST_FILE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.codex.notifications.tests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.maccodex.notifications.tests;
 				PRODUCT_NAME = CodexNotifierTests;
 				SWIFT_VERSION = 5.0;
 			};
@@ -417,11 +379,47 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = F4VK638T8R;
 				GENERATE_INFOPLIST_FILE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.codex.notifications.tests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.maccodex.notifications.tests;
 				PRODUCT_NAME = CodexNotifierTests;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		9A1D4E3A2C8B4D7A9C1E0F34 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = F4VK638T8R;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.maccodex.notifications.core;
+				PRODUCT_NAME = CodexNotifierCore;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		9A1D4E3A2C8B4D7A9C1E0F35 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = F4VK638T8R;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.maccodex.notifications.core;
+				PRODUCT_NAME = CodexNotifierCore;
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -447,20 +445,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		9A1D4E3A2C8B4D7A9C1E0F33 /* Build configuration list for PBXNativeTarget "CodexNotifierCore" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				9A1D4E3A2C8B4D7A9C1E0F34 /* Debug */,
-				9A1D4E3A2C8B4D7A9C1E0F35 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Debug;
-		};
 		9A1D4E3A2C8B4D7A9C1E0F27 /* Build configuration list for PBXNativeTarget "CodexNotifierTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9A1D4E3A2C8B4D7A9C1E0F28 /* Debug */,
 				9A1D4E3A2C8B4D7A9C1E0F29 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		9A1D4E3A2C8B4D7A9C1E0F33 /* Build configuration list for PBXNativeTarget "CodexNotifierCore" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9A1D4E3A2C8B4D7A9C1E0F34 /* Debug */,
+				9A1D4E3A2C8B4D7A9C1E0F35 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;

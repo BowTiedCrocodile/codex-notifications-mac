@@ -46,6 +46,7 @@ open -g -a CodexNotifier --args '{"type":"agent-turn-complete","last-assistant-m
 
 - Play Sound: toggle sound on/off
 - Flash Icon: toggle status icon flash on/off
+- Show Notification: request system permission and toggle native macOS alerts
 - Sound: choose the system sound
 - Test Notification: preview sound/icon
 
@@ -53,3 +54,4 @@ open -g -a CodexNotifier --args '{"type":"agent-turn-complete","last-assistant-m
 
 - The helper script writes the payload to `~/Library/Application Support/CodexNotifier/payload.json`.
 - The app watches that file so repeated triggers work even when the app is already running.
+- Native notifications require user approval the first time you enable "Show Notification".

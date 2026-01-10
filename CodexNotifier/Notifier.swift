@@ -1,23 +1,45 @@
 import Cocoa
+import UserNotifications
+
+public protocol NotificationCentering {
+    func requestAuthorization(options: UNAuthorizationOptions, completionHandler: @escaping (Bool, Error?) -> Void)
+    func add(_ request: UNNotificationRequest, withCompletionHandler completionHandler: ((Error?) -> Void)?)
+}
+
+public struct SystemNotificationCenter: NotificationCentering {
+    public init() {}
+
+    public func requestAuthorization(options: UNAuthorizationOptions, completionHandler: @escaping (Bool, Error?) -> Void) {
+        UNUserNotificationCenter.current().requestAuthorization(options: options, completionHandler: completionHandler)
+    }
+
+    public func add(_ request: UNNotificationRequest, withCompletionHandler completionHandler: ((Error?) -> Void)?) {
+        UNUserNotificationCenter.current().add(request, withCompletionHandler: completionHandler)
+    }
+}
 
 public final class Notifier {
     private enum Keys {
         static let playSound = "playSound"
         static let flashIcon = "flashIcon"
         static let soundName = "soundName"
+        static let showNotification = "showNotification"
     }
 
     private let defaults: UserDefaults
+    private let notificationCenter: NotificationCentering
     private var resetWorkItem: DispatchWorkItem?
 
     public var iconHandler: ((Bool) -> Void)?
 
-    public init(defaults: UserDefaults = .standard) {
+    public init(defaults: UserDefaults = .standard, notificationCenter: NotificationCentering = SystemNotificationCenter()) {
         self.defaults = defaults
+        self.notificationCenter = notificationCenter
         defaults.register(defaults: [
             Keys.playSound: true,
             Keys.flashIcon: true,
             Keys.soundName: Self.defaultSoundName(),
+            Keys.showNotification: false,
         ])
     }
 
@@ -36,6 +58,11 @@ public final class Notifier {
         set { defaults.set(newValue, forKey: Keys.soundName) }
     }
 
+    public var showNotificationEnabled: Bool {
+        get { defaults.bool(forKey: Keys.showNotification) }
+        set { defaults.set(newValue, forKey: Keys.showNotification) }
+    }
+
     public func handle(jsonString: String) {
         guard let payload = NotificationPayload.decode(from: jsonString) else { return }
         handle(payload: payload)
@@ -51,11 +78,18 @@ public final class Notifier {
         if playSoundEnabled {
             playSound()
         }
+
+        if showNotificationEnabled {
+            postNotification(title: payload.title, message: payload.message, threadId: payload.threadId)
+        }
     }
 
     public func playTest() {
         flashIcon()
         playSound()
+        if showNotificationEnabled {
+            postNotification(title: "Codex: Test Notification", message: "Notifications are working.", threadId: "test")
+        }
     }
 
     private func flashIcon() {
@@ -72,6 +106,29 @@ public final class Notifier {
         let name = soundName
         let sound = NSSound(named: NSSound.Name(name))
         sound?.play()
+    }
+
+    private func postNotification(title: String, message: String, threadId: String?) {
+        let content = UNMutableNotificationContent()
+        content.title = title
+        if !message.isEmpty {
+            content.body = message
+        }
+        if let threadId, !threadId.isEmpty {
+            content.threadIdentifier = threadId
+        }
+        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: nil)
+        notificationCenter.add(request) { error in
+            if let error {
+                NSLog("Notification post failed: %@", error.localizedDescription)
+            }
+        }
+    }
+
+    public func requestNotificationAuthorization(completion: ((Bool) -> Void)? = nil) {
+        notificationCenter.requestAuthorization(options: [.alert]) { granted, _ in
+            completion?(granted)
+        }
     }
 
     public static func availableSounds() -> [String] {
