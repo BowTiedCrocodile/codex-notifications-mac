@@ -2,6 +2,10 @@
 
 Native macOS menu bar app that plays a sound and flashes a status icon when Codex finishes a turn.
 
+## Demo
+
+![Demo](./.github/images/demo.gif)
+
 ## Build
 
 Open `CodexNotifier.xcodeproj` in Xcode and build/run the `CodexNotifier` target. The app runs as a menu bar-only utility (no Dock icon).
