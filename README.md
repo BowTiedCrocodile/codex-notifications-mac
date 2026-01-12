@@ -16,7 +16,7 @@ xcodebuild test -project CodexNotifier.xcodeproj -scheme CodexNotifierTests
 
 ## Codex integration
 
-Codex can run a shell script when a turn completes. Point it at `scripts/codex-notify` and pass the payload JSON as the first argument.
+Codex can run a shell script when a turn completes. Point it the script in `scripts/codex-notify.sh` and pass the payload JSON as the first argument.
 
 ### Configure Codex
 
@@ -34,12 +34,6 @@ Example script invocation:
 
 ```sh
 scripts/codex-notify '{"type":"agent-turn-complete","last-assistant-message":"Turn Complete!","input-messages":["Prompt"],"thread-id":"abc"}'
-```
-
-If you want to use `open` directly instead, you can launch the app with args:
-
-```sh
-open -g -a CodexNotifier --args '{"type":"agent-turn-complete","last-assistant-message":"Turn Complete!"}'
 ```
 
 ## Menu bar controls
