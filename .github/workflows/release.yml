@@ -21,21 +21,25 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Validate signing secrets
+      - name: Detect signing secrets
+        id: signing
         run: |
-          missing=0
+          missing=()
           for var in MACOS_SIGN_IDENTITY MACOS_SIGN_P12_BASE64 MACOS_SIGN_P12_PASSWORD MACOS_KEYCHAIN_PASSWORD; do
             if [ -z "${!var}" ]; then
-              echo "Missing $var"
-              missing=1
+              missing+=("$var")
             fi
           done
-          if [ "$missing" -ne 0 ]; then
-            exit 1
+          if [ "${#missing[@]}" -gt 0 ]; then
+            echo "signing_enabled=false" >> "$GITHUB_OUTPUT"
+            echo "Signing disabled; missing: ${missing[*]}"
+          else
+            echo "signing_enabled=true" >> "$GITHUB_OUTPUT"
           fi
 
       - name: Import signing certificate
         uses: apple-actions/import-codesign-certs@v3
+        if: steps.signing.outputs.signing_enabled == 'true'
         with:
           p12-file-base64: ${{ secrets.MACOS_SIGN_P12_BASE64 }}
           p12-password: ${{ secrets.MACOS_SIGN_P12_PASSWORD }}
