@@ -10,6 +10,32 @@ Native macOS menu bar app that plays a sound and flashes a status icon when Code
 
 Open `CodexNotifier.xcodeproj` in Xcode and build/run the `CodexNotifier` target. The app runs as a menu bar-only utility (no Dock icon).
 
+## Release build (DMG)
+
+Build a release DMG locally:
+
+```sh
+scripts/build-dmg.sh
+```
+
+Optional codesign (Developer ID):
+
+```sh
+export MACOS_SIGN_IDENTITY="Developer ID Application: Your Name (TEAMID)"
+scripts/build-dmg.sh
+```
+
+The DMG is created in `dist/`. Set `DMG_NAME` to customize the output name.
+
+## GitHub Releases
+
+Pushing a `v*` tag builds a DMG and uploads it to the GitHub release page. Required secrets:
+
+- `MACOS_SIGN_IDENTITY`
+- `MACOS_SIGN_P12_BASE64`
+- `MACOS_SIGN_P12_PASSWORD`
+- `MACOS_KEYCHAIN_PASSWORD`
+
 ## Tests
 
 Run the unit tests with:

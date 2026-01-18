@@ -1,0 +1,50 @@
+name: release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  build-release:
+    runs-on: macos-latest
+    env:
+      DMG_NAME: CodexNotifier-${{ github.ref_name }}
+      MACOS_KEYCHAIN_PASSWORD: ${{ secrets.MACOS_KEYCHAIN_PASSWORD }}
+      MACOS_SIGN_IDENTITY: ${{ secrets.MACOS_SIGN_IDENTITY }}
+      MACOS_SIGN_P12_BASE64: ${{ secrets.MACOS_SIGN_P12_BASE64 }}
+      MACOS_SIGN_P12_PASSWORD: ${{ secrets.MACOS_SIGN_P12_PASSWORD }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Validate signing secrets
+        run: |
+          missing=0
+          for var in MACOS_SIGN_IDENTITY MACOS_SIGN_P12_BASE64 MACOS_SIGN_P12_PASSWORD MACOS_KEYCHAIN_PASSWORD; do
+            if [ -z "${!var}" ]; then
+              echo "Missing $var"
+              missing=1
+            fi
+          done
+          if [ "$missing" -ne 0 ]; then
+            exit 1
+          fi
+
+      - name: Import signing certificate
+        uses: apple-actions/import-codesign-certs@v3
+        with:
+          p12-file-base64: ${{ secrets.MACOS_SIGN_P12_BASE64 }}
+          p12-password: ${{ secrets.MACOS_SIGN_P12_PASSWORD }}
+          keychain-password: ${{ secrets.MACOS_KEYCHAIN_PASSWORD }}
+
+      - name: Build DMG
+        run: scripts/build-dmg.sh
+
+      - name: Publish release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist/${{ env.DMG_NAME }}.dmg
